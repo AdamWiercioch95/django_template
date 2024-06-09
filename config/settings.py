@@ -11,8 +11,10 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
 from pathlib import Path
-import environ
 import os
+
+import environ
+import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -33,7 +35,6 @@ ALLOWED_HOSTS = []
 
 
 # Application definition
-
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -86,6 +87,10 @@ DATABASES = {
     }
 }
 
+DATABASE_URL = os.environ.get('DB_CONNECTION_STRING')
+db_config = dj_database_url.config(default=DATABASE_URL, conn_max_age=500, ssl_require=False)
+
+DATABASES['default'].update(db_config)
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators

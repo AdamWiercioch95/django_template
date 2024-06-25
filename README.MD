@@ -7,6 +7,7 @@ This project is a template for a Django application that can be used as a base f
 - Python 3.8 or higher
 - [Poetry](https://python-poetry.org/) for dependency management
 - Virtual environment (optional, but recommended)
+- Django 5.0.6 or higher
 
 ## How to Run the Project?
 
@@ -17,38 +18,31 @@ This project is a template for a Django application that can be used as a base f
     cd myproject
     ```
 
-### 2. Set Up the Virtual Environment and Install Django
-1. Create a virtual environment and install Django using Poetry:
-    ```bash
-    poetry init -n
-    poetry add django
-    ```
-
-### 3. Set Up the Django Project
+### 2. Set Up the Django Project
 1. Set up your project using the copied template URL:
     ```bash
     django-admin startproject project_name . --template https://github.com/AdamWiercioch95/django_template/archive/refs/heads/template.zip
     ```
     Replace `project_name` with the desired name for your project.
 
-### 4. Install Dependencies
+### 3. Install Dependencies
 1. Use Poetry to install the project dependencies:
     ```bash
     poetry install
     ```
 
-### 5. Open the Project
+### 4. Open the Project
 1. Open your project in your preferred code editor.
 
 
-### 6. Configure Environment Files
+### 5. Configure Environment Files
 1. Navigate to the `env` directory and create a `.env` file based on the `.env-default` file:
     ```bash
     cp env/.env-default env/.env
     ```
 2. Edit the `env/.env` file to fit your environment (e.g., database settings, API keys, etc.).
 
-### 7. Adjust Test Configurations
+### 6. Adjust Test Configurations
 1. Open the `pytest.ini` file and replace `{{ project_name }}` with your project name:
     ```ini
     [pytest]
